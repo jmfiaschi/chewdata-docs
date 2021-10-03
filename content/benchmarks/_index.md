@@ -10,4 +10,4 @@ draft = false
 
 | Type | Description                 |
 | ---- | --------------------------- |
-| Code | Branch [main](/chewdata/bench/main/) / [beta](/chewdata/bench/beta/) |
+| Code | Branch [main](/chewdata/benches/main/) / [beta](/chewdata/benches/beta/) |
