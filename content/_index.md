@@ -7,7 +7,7 @@ title = "Chew(^,..,^)Data"
 lead = 'Manipulate data everywhere with a simple Command Line Interface'
 url = "/docs/getting-started/introduction/"
 url_button = "Get started"
-repo_version = "GitHub v1.2.0"
+repo_version = "GitHub v1.4.0"
 repo_license = "Open-source MIT&Apache Licenses."
 repo_url = "https://github.com/jmfiaschi/chewdata"
 
