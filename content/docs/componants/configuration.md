@@ -49,5 +49,5 @@ The application read steps in `FIFO` (First In First Out) mode.
 
 All steps are link together by internal data queue. When a step finish to handle a data, it is pushed in the queue and the next step will handle the data.
 Each steps run in asynchronous.
-Each queue contain a limit that can be customize. 
-If a queue reach the limit, the step wait that the queue is released by the next step. 
+Each queue contain a limit that can be customize.
+If a queue reach the limit, the step wait that the queue is released by the next step.

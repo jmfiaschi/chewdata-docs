@@ -54,10 +54,7 @@ examples:
         "type": "reader",
         "connector":{
             "type": "in_memory",
-            "memory": {
-                "username": "{{ MY_USERNAME }}",
-                "password": "{{ MY_PASSWORD }}"
-            }
+            "memory": "{\"username\": \"{{ MY_USERNAME }}\",\"password\": \"{{ MY_PASSWORD }}\"}"
         }
     }
 ]
@@ -121,7 +118,7 @@ examples:
         "connector":{
             "type": "curl",
             "endpoint": "{{ CURL_ENDPOINT }}",
-            "path": "/post",
+            "path": "/post?skip={{ SKIP }}&limit={{ LIMIT }}&cache={{ cache }}",
             "method": "post",
             "authenticator": {
                 "type": "basic",
@@ -132,13 +129,13 @@ examples:
                 "Accept": "application/json"
             },
             "parameters": [
-                { "field": "value" }
+                { "cache": false }
             ],
-            "limit": 100,
+            "limit": 1000,
             "skip": 0,
             "paginator": {
-                "limit": "limit_name",
-                "skip": "skip_name"
+                "limit": "LIMIT",
+                "skip": "SKIP"
             }
         },
     }

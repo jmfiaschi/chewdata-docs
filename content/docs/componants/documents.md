@@ -73,21 +73,37 @@ examples:
         "type": "read",
         "document": {
             "type": "json",
-            "is_pretty": true,
-            "entry_path": "/my_root/array_field/0/my_field"
+            "entry_path": "/0"
+        }
+    },
+    {
+        "type": "write",
+        "document": {
+            "type": "json",
+            "is_pretty": true
         }
     }
 ]
 ```
 
-input/output:
+input:
 
 ```json
-[{
-    "field":"value",
+[
+    {"field1":"value1"},
+    {"field1":"value2"},
     ...
-},
-...]
+]
+```
+
+output:
+
+```json
+[
+    {
+        "field1":"value1"
+    }
+]
 ```
 
 ## Jsonl
@@ -106,19 +122,35 @@ examples:
     {
         "type": "read",
         "document": {
-            "type": "json",
-            "is_pretty": true,
-            "entry_path": "/my_root/array_field/0/my_field"
+            "type": "jsonl",
+            "entry_path": "/field1"
+        }
+    },
+    {
+        "type": "write",
+        "document": {
+            "type": "jsonl",
+            "is_pretty": true
         }
     }
 ]
 ```
 
-input/output:
+input:
 
 ```jsonl
-{ "field":"value", ... }
-{ "field":"value", ... }
+[
+    { "field1":"value1", ... },
+    { "field1":"value2", ... },
+    ...
+]
+```
+
+output:
+
+```jsonl
+value1
+value2
 ...
 ```
 
@@ -182,14 +214,14 @@ field= value
 
 ## Xml
 
-| key         | alias | Description                                                      | Default Value | Possible Values                                                                |
-| ----------- | ----- | ---------------------------------------------------------------- | ------------- | ------------------------------------------------------------------------------ |
-| type        | -     | Required in order to use this document                           | `xml`         | `xml`                                                                          |
-| metadata    | meta  | Metadata describe the resource                                   | `none`        | [Metadata](#metadata)                                                          |
-| is_pretty   | -     | Display data in readable format for human                        | `false`       | `false` / `true`                                                               |
-| indent_char | -     | Character to use for indentation in pretty mode                  | `space`       | Simple character                                                               |
-| indent_size | -     | Number of indentation to use for each line in pretty mode        | `4`           | unsigned number                                                                |
-| entry_path  | -     | Use this field if you want target a specific field in the object | `none`        | String in [json pointer format](https://datatracker.ietf.org/doc/html/rfc6901) |
+| key         | alias | Description                                                         | Default Value  | Possible Values                                                                |
+| ----------- | ----- | ------------------------------------------------------------------- | -------------- | ------------------------------------------------------------------------------ |
+| type        | -     | Required in order to use this document                              | `xml`          | `xml`                                                                          |
+| metadata    | meta  | Metadata describe the resource                                      | `none`         | [Metadata](#metadata)                                                          |
+| is_pretty   | -     | Display data in readable format for human                           | `false`        | `false` / `true`                                                               |
+| indent_char | -     | Character to use for indentation in pretty mode                     | `space`        | Simple character                                                               |
+| indent_size | -     | Number of indentation to use for each line in pretty mode           | `4`            | unsigned number                                                                |
+| entry_path  | -     | Use this field if you want to target a specific field in the object | `/root/*/item` | String in [json pointer format](https://datatracker.ietf.org/doc/html/rfc6901) |
 
 examples:
 
@@ -202,19 +234,28 @@ examples:
             "is_pretty": true,
             "indet_char": " ",
             "indent_size": 4,
-            "entry_path": "/root/0/item"
+            "entry_path": "/root/*/item"
         }
+    },
+    {
+        "type": "w"
     }
 ]
 ```
 
-input/output:
+input:
 
 ```xml
 <root>
     <item field1="value1"/>
     ...
 </root>
+```
+
+output:
+
+```json
+[{"field1":"value1"},...]
 ```
 
 ## Yaml
@@ -231,11 +272,7 @@ examples:
     {
         "type": "read",
         "document": {
-            "type": "xml",
-            "is_pretty": true,
-            "indet_char": " ",
-            "indent_size": 4,
-            "entry_path": "/root/0/item"
+            "type": "yaml"
         }
     }
 ]
