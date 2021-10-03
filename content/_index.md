@@ -29,10 +29,10 @@ content = "Choose your serveur where you want to execute the etl : Local, Kube, 
 
 [[extra.list]]
 title = "Customize your package"
-content = 'With rust feature flags, enable only required componants.<br/>See the <a href="/docs/componants/features" title="features documentation" target="_blank">features documentation</a>'
+content = 'With rust feature flags, enable only required componants.<br/>See the <a href="/chewdata-docs/docs/componants/features" title="features documentation" target="_blank">features documentation</a>'
 
 [[extra.list]]
 title = "Easy to install"
-content = 'Install the project with only one command.<br>See the <a href="/docs/getting-started/quick-start" title="Quick start" target="_blank">installation documentation</a> page'
+content = 'Install the project with only one command.<br>See the <a href="/chewdata-docs/docs/getting-started/quick-start" title="Quick start" target="_blank">installation documentation</a> page'
 
 +++
