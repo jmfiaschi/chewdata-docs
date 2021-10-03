@@ -13,19 +13,19 @@ repo_url = "https://github.com/jmfiaschi/chewdata"
 
 [[extra.list]]
 title = "No Garbage Collector"
-content = 'This ETL run without garbage collector for better stability. Everything is handle by the code in <a href="https://www.rust-lang.org/" target="_blank">Rust</a>.'
+content = 'This ETL runs without a garbage collector for better stability. Everything is handled by the code in <a href="https://www.rust-lang.org/" target="_blank">Rust</a>.'
 
 [[extra.list]]
-title = "Versionable"
-content = 'The configuration can be versionable and give the capability to retrieve old version with a version control system.'
+title = "Configuration multi versions"
+content = 'The configuration can be saved in different versions. You can retrieve old versions with a "version control system".'
 
 [[extra.list]]
 title = "Scalable and Parallelizable"
-content = "The application is a simple job that can be executed a multiple time in different context. It possible to chain commands for complex flows."
+content = "The application is a simple job that can be executed multiple times in different contexts. It is possible to chain commands for complex flows."
 
 [[extra.list]]
 title = "Simple command executable everywhere"
-content = "Choose your serveur where you want to execute the etl : Local, Kube, AWS Lambda, AWS EC2, Web, etc..."
+content = "Choose your server where you want to execute the ETL : Local, Kube, AWS Lambda, AWS EC2, Web, etc..."
 
 [[extra.list]]
 title = "Customize your package"
