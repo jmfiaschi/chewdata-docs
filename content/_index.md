@@ -33,6 +33,6 @@ content = 'With rust feature flags, enable only required componants.<br/>See the
 
 [[extra.list]]
 title = "Easy to install"
-content = 'Install the project with only one command.<br>See the <a href="/docs/getting-started/installation" title="installation documentation" target="_blank">installation documentation</a> page'
+content = 'Install the project with only one command.<br>See the <a href="/docs/getting-started/quick-start" title="Quick start" target="_blank">installation documentation</a> page'
 
 +++
