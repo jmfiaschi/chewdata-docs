@@ -48,3 +48,10 @@ Display `trace` logs and highest severities
 cargo install chewdata --no-default-features --features "tracing/release_max_level_trace"
 echo '{"field1":"value1"}' | RUST_LOG=trace chewdata '[{"type":"reader","document":{"type":"json"},"connector":{"type":"io"}},{"type":"writer","document":{"type":"json"},"connector":{"type":"io"}}]'
 ```
+
+If you want to filter logs, you can use the directive syntax from [tracing_subscriber](https://tracing.rs/tracing_subscriber/filter/struct.envfilter)
+
+```bash
+cargo install chewdata --no-default-features --features "tracing/release_max_level_trace"
+echo '{"field1":"value1"}' | RUST_LOG=chewdata=trace chewdata '[{"type":"reader","document":{"type":"json"},"connector":{"type":"io"}},{"type":"writer","document":{"type":"json"},"connector":{"type":"io"}}]'
+```
