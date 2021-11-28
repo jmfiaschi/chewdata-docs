@@ -26,7 +26,6 @@ This step read dataset through a queue. For each data in input, it fetch the res
 | alias               | -     | Alias the step use during the debug mode                                | `none`        | Auto generate alphanumeric value             |
 | description         | desc  | Describ your step and give more visibility                              | `none`        | String                                       |
 | data_type           | data  | Type of data the reader push in the queue : [ ok / err ]                | `ok`          | `ok` / `err`                                 |
-| wait_in_millisecond | wait  | Time to wait in millisecond until to retry to put the data in the queue | `10`          | unsigned number                              |
 
 examples:
 
@@ -42,8 +41,7 @@ examples:
         "document": {
             "type": "json"
         },
-        "data_type": "ok",
-        "wait_in_millisecond": 10
+        "data_type": "ok"
     }
 ]
 ```
@@ -60,7 +58,6 @@ This step read dataset through a queue and write data in a resource though a con
 | alias               | -       | Alias the step use during the debug mode                                    | `none`        | Auto generate alphanumeric value             |
 | description         | desc    | Describ your step and give more visibility                                  | `none`        | String                                       |
 | data_type           | data    | Type of data read for writing. skip other data type                         | `ok`          | `ok` / `err`                                 |
-| wait_in_millisecond | -       | Time to wait in millisecond until to retry to put the data in the queue     | `10`          | unsigned number                              |
 | thread_number       | threads | Parallelize the step in multiple threads                                    | `1`           | unsigned number                              |
 | dataset_size        | batch   | Stack size limit before to push data into the resource though the connector | `1000`        | unsigned number                              |
 
@@ -79,7 +76,6 @@ examples:
             "type": "json"
         },
         "data_type": "ok",
-        "wait_in_millisecond": 10,
         "thread_number": 1,
         "dataset_size": 1000
     }
@@ -98,7 +94,6 @@ This step read dataset through a queue, transform the data with actions and writ
 | alias               | -       | Alias the step use during the debug mode                                                                                    | `none`        | Auto generate alphanumeric value                |
 | description         | desc    | Describ your step and give more visibility                                                                                  | `none`        | String                                          |
 | data_type           | data    | Type of data used for the transformation. skip other data type                                                              | `ok`          | `ok` / `err`                                    |
-| wait_in_millisecond | -       | Time to wait in millisecond until to retry to put the data in the queue                                                     | `10`          | unsigned number                                 |
 | thread_number       | threads | Parallelize the step in multiple threads                                                                                    | `1`           | unsigned number                                 |
 | actions             | -       | List of actions composed                                                                                                    | `none`        | See [Action](#action)                           |
 | input_name          | input   | Input name variable can be used in the pattern action                                                                       | `input`       | String                                          |
@@ -137,7 +132,6 @@ examples:
             "type": "json"
         },
         "data_type": "ok",
-        "wait_in_millisecond": 10,
         "thread_number": 1,
         "actions": [{
             "field": "field_A",
@@ -158,7 +152,6 @@ examples:
 | connector           | conn    | Connector type to use in order to read a resource                       | `io`          | See [connectors](/docs/componants/connector) |
 | alias               | -       | Alias the step use during the debug mode                                | `none`        | Auto generate alphanumeric value             |
 | description         | desc    | Describe your step and give more visibility                             | `none`        | String                                       |
-| wait_in_millisecond | wait    | Time to wait in millisecond until to retry to put the data in the queue | `10`          | unsigned number                              |
 | exclude_paths       | exclude | resource to exclude for the erase step                                  | `none`        | List of string                               |
 
 ```json
@@ -171,7 +164,6 @@ examples:
             "type": "local",
             "path": "./*.json"
         },
-        "wait_in_millisecond": 10,
         "exclude_paths": [
             "file1.json"
         ]
